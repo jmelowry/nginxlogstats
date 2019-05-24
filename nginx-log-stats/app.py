@@ -9,6 +9,7 @@ LOG_LEVEL = 'DEBUG'
 
 logging.basicConfig(level=logging.DEBUG)
 
+
 class nginx_log_stats:
 
     def __init__(self, logfile):
@@ -32,15 +33,17 @@ class nginx_log_stats:
                 try:
                     parsed_ip = ipaddress.ip_address(ip)
                     #parsed_timestamp = dateparser.parse(timestamp)
-                    self.lf.append([parsed_ip,timestamp,method, location, response_code])
+                    self.lf.append(
+                        [parsed_ip, timestamp, method, location, response_code])
 
                 except ValueError:
-                    logging.error('{0} does not appear to be a valid IP address.'.format(ip))
+                    logging.error(
+                        '{0} does not appear to be a valid IP address.'.format(ip))
 
-                #logging.debug(parsed_ip)
-                
-                #logging.debug(ip)
-    
+                # logging.debug(parsed_ip)
+
+                # logging.debug(ip)
+
     def summarize(self):
 
         # format of each line is:
@@ -54,9 +57,9 @@ class nginx_log_stats:
         return summary
 
 
-
 if __name__ == '__main__':
 
-    test = nginx_log_stats('/Users/jamie/github/nginx-log-stats/sample-logs/sample_access.log')
+    test = nginx_log_stats(
+        '/Users/jamie/github/nginx-log-stats/sample-logs/sample_access.log')
     test.load_log()
     test.summarize()
