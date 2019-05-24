@@ -2,7 +2,6 @@
 
 import logging
 import ipaddress
-import dateparser
 import colorama
 
 LOG_LEVEL = 'DEBUG'
@@ -18,6 +17,8 @@ class nginx_log_stats:
         self.lf = []
 
     def load_log(self):
+        # this load function assumes an nginx default configuration. 
+        # todo: configure log format from the nginx config file
 
         with open(self.logfile, 'r') as lf:
 
@@ -32,7 +33,7 @@ class nginx_log_stats:
                 # Validate IP Address
                 try:
                     parsed_ip = ipaddress.ip_address(ip)
-                    #parsed_timestamp = dateparser.parse(timestamp)
+                    
                     self.lf.append(
                         [parsed_ip, timestamp, method, location, response_code])
 
