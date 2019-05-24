@@ -10,4 +10,4 @@ Read and summarize nginx access logs
 
 ## Usage
 
-nginx-log-stats <logfile>
+`nginx-log-stats <logfile>`
