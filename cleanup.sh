@@ -1,1 +1,1 @@
-rm -rf ./dist ./build *.egginfo
+rm -rf ./dist ./build *.egginfo *.egg-info
