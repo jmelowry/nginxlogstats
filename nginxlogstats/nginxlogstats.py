@@ -19,7 +19,7 @@ class NginxLogStats:
         self.lf = []
 
     def load_log(self):
-        # this load function assumes an nginx default configuration. 
+        # this load function assumes an nginx default configuration.
         # todo: configure log format from the nginx config file
 
         with open(self.logfile, 'r') as lf:
@@ -35,7 +35,7 @@ class NginxLogStats:
                 # Validate IP Address
                 try:
                     parsed_ip = ipaddress.ip_address(ip)
-                    
+
                     self.lf.append(
                         [parsed_ip, timestamp, method, location, response_code])
 
@@ -59,15 +59,21 @@ class NginxLogStats:
 
         return summary
 
+
 def cli():
+    try:
+        logfile = argv[1]
 
-    #logfile = argv[1]
+        test = NginxLogStats(logfile)
+        test.load_log()
+        test.summarize()
 
-    test = NginxLogStats('/Users/jamie/github/nginx-log-stats/sample-logs/sample_access.log')
-    test.load_log()
-    test.summarize()
+        print('cli accessed')
 
-    print('cli accessed')
+    except IndexError:
+
+        print('Missing logfile argument. This is a test output')
+        exit(1)
 
 
 if __name__ == '__main__':
