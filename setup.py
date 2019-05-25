@@ -9,9 +9,9 @@ from shutil import rmtree
 from setuptools import find_packages, setup, Command
 
 # Package meta-data.
-NAME = 'nginx-log-stats'
+NAME = 'nginxlogstats'
 DESCRIPTION = 'Get some quick stats on nginx access.log'
-URL = 'https://github.com/jmelowry/nginx-log-stats'
+URL = 'https://github.com/jmelowry/nginxlogstats'
 EMAIL = 'jmelowry@gmail.com'
 AUTHOR = 'Jamie Lowry'
 REQUIRES_PYTHON = '>=3.6.0'
@@ -63,7 +63,7 @@ setup(
     # py_modules=['mypackage'],
 
     entry_points={
-        'console_scripts': ['nginx-log-stats=nginx_log_stats:cli'],
+        'console_scripts': ['nginx-log-stats=nginx_log_stats.nginx_log_stats:cli'],
     },
     install_requires=REQUIRED,
     extras_require=EXTRAS,
