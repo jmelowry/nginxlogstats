@@ -57,6 +57,10 @@ class nginx_log_stats:
 
         return summary
 
+def cli():
+
+    print('cli accessed')
+
 
 if __name__ == '__main__':
 
