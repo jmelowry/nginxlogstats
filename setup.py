@@ -63,7 +63,7 @@ setup(
     # py_modules=['mypackage'],
 
     entry_points={
-        'console_scripts': ['nginx-log-stats=nginx_log_stats.nginx_log_stats:cli'],
+        'console_scripts': ['nls=nginxlogstats.nginxlogstats:cli'],
     },
     install_requires=REQUIRED,
     extras_require=EXTRAS,

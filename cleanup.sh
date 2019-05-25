@@ -1,1 +1,1 @@
-rm -rf ./dist ./build *.egginfo *.egg-info
+rm -rf ./dist ./build *.egginfo *.egg-info venv

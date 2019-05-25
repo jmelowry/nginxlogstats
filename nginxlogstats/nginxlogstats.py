@@ -1,16 +1,17 @@
 #!/usr/bin/env python
 
+from sys import argv
 import logging
 import ipaddress
 import colorama
-import argparse
+
 
 LOG_LEVEL = 'DEBUG'
 
 logging.basicConfig(level=logging.DEBUG)
 
 
-class nginx_log_stats:
+class NginxLogStats:
 
     def __init__(self, logfile):
 
@@ -60,11 +61,9 @@ class nginx_log_stats:
 
 def cli():
 
-    parser = argparse.ArgumentParser()
-    parser.add_argument('-l', '--log', help='foo help')
-    args = parser.parse_args()
+    #logfile = argv[1]
 
-    test = nginx_log_stats('/Users/jamie/github/nginx-log-stats/sample-logs/sample_access.log')
+    test = NginxLogStats('/Users/jamie/github/nginx-log-stats/sample-logs/sample_access.log')
     test.load_log()
     test.summarize()
 
@@ -73,7 +72,4 @@ def cli():
 
 if __name__ == '__main__':
 
-    test = nginx_log_stats(
-        '/Users/jamie/github/nginx-log-stats/sample-logs/sample_access.log')
-    test.load_log()
-    test.summarize()
+    cli()

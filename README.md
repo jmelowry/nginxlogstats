@@ -6,8 +6,8 @@ Read and summarize nginx access logs
 
 ## Installation
 
-`pip install nginx-log-stats`
+`python setup.py install`
 
 ## Usage
 
-`nginx-log-stats <logfile>`
+`nls <logfile>`
