@@ -8,7 +8,7 @@
 
 ## Installation
 
-`pip install https://github.com/jmelowry/nginx-log-stats/archive/master.zip`
+`pip install https://github.com/jmelowry/nginx-log-stats/archive/main.zip`
 
 ## Usage
 
